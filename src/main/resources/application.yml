@@ -1,0 +1,23 @@
+server:
+  port: 8888
+  servlet:
+    context-path: /core/api
+
+spring:
+  datasource:
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:springboot_todolist}
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:123456789}
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  data:
+    web:
+      pageable:
+        one-indexed-parameters: true
+  mvc:
+    throw-exception-if-no-handler-found: true
